@@ -54,15 +54,19 @@
             // const xr = scene.createDefaultXRExperienceAsync();
 
             const light = new BABYLON.HemisphericLight("light", new BABYLON.Vector3(1, 6, 2));
-            sphere.position = new BABYLON.Vector3(1, 1, 0);
-            cylinder.position = new BABYLON.Vector3(2, 4, 0);
+            sphere.position.x = 1;
+            cylinder.position.x = 2;
             torus.position = new BABYLON.Vector3(5, 1, 0);
 
 
             const greenMat = new BABYLON.StandardMaterial("green", scene)
             greenMat.diffuseColor = new BABYLON.Color3(1, 2, 0)
+            const redMat = new BABYLON.StandardMaterial("red", scene)
+            redMat.diffuseColor = new BABYLON.Color3(1, 0, 0)
+
             //call shapes to color//
-            sphere.material = greenMat
+            sphere.material = greenMat;
+            box.material = redMat;
             // STEP 8b: Return the scene
             return scene;
         }
